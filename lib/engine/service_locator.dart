@@ -1,5 +1,5 @@
 import 'package:get_it/get_it.dart';
-import 'package:reporter_app/app_management/app_manager.dart';
+import 'package:reporter_app/engine/app_manager.dart';
 
 class ServiceLocator {
   static ServiceLocator serviceLocator = ServiceLocator._();
