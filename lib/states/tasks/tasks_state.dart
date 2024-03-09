@@ -17,7 +17,6 @@ abstract class TasksStateBase with Store {
     // try {
     var res = await ServiceLocator().get<TaskRepository>().getTasks();
     tasks = (res.data as List<Task>).asObservable();
-    print(tasks);
     // } catch (e) {}
   }
 }
