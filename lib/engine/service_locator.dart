@@ -4,6 +4,7 @@ import 'package:reporter_app/environment/environment.dart';
 import 'package:reporter_app/http/client.dart';
 import 'package:reporter_app/repositories/task_repository.dart';
 import 'package:reporter_app/states/dashboard/dashboard_state.dart';
+import 'package:reporter_app/states/tasks/tasks_state.dart';
 
 import '../framework/services/routing_service.dart';
 
@@ -51,5 +52,6 @@ class ServiceLocator {
 
   void _registerStates() {
     _registerSingleton<DashboardState>(DashboardState());
+    _registerSingleton<TasksState>(TasksState());
   }
 }
