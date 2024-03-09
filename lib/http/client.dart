@@ -16,6 +16,10 @@ class HttpClient {
   BaseOptions createBaseOptions() {
     return BaseOptions(
       baseUrl: environment.baseUrl,
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
     );
   }
 }
