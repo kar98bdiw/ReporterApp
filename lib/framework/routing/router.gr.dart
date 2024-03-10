@@ -20,7 +20,13 @@ abstract class _$AppRouter extends RootStackRouter {
         routeData: routeData,
         child: const DashboardPage(),
       );
-    }
+    },
+    TasksRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const TasksPage(),
+      );
+    },
   };
 }
 
@@ -34,6 +40,20 @@ class DashboardRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'DashboardRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [TasksPage]
+class TasksRoute extends PageRouteInfo<void> {
+  const TasksRoute({List<PageRouteInfo>? children})
+      : super(
+          TasksRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'TasksRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
