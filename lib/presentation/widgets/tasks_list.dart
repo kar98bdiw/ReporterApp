@@ -4,16 +4,21 @@ import 'package:reporter_app/presentation/widgets/task_tile.dart';
 
 class TasksList extends StatelessWidget {
   final List<Task> tasks;
+  final Function(Task)? onTaskTap;
   const TasksList({
     super.key,
     required this.tasks,
+    this.onTaskTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
       padding: const EdgeInsets.all(15),
-      itemBuilder: (c, i) => TaskTile(task: tasks[i]),
+      itemBuilder: (c, i) => TaskTile(
+        task: tasks[i],
+        onTap: onTaskTap,
+      ),
       separatorBuilder: (c, i) => const SizedBox(height: 10),
       itemCount: tasks.length,
     );

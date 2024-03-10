@@ -33,7 +33,7 @@ class _DashboardPageState extends State<DashboardPage>
       appBar: AppBar(),
       body: AutoTabsRouter.tabBar(
         routes: const [
-          TasksRoute(),
+          TasksRouter(),
         ],
         builder: (context, child, tabController) {
           setTabController(tabController);

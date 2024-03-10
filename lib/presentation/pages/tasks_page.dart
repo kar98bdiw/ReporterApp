@@ -5,6 +5,9 @@ import 'package:reporter_app/engine/service_locator.dart';
 import 'package:reporter_app/presentation/widgets/tasks_list.dart';
 import 'package:reporter_app/states/tasks/tasks_state.dart';
 
+import '../../framework/routing/router.dart';
+import '../../models/task/task.dart';
+
 @RoutePage()
 class TasksPage extends StatefulWidget {
   const TasksPage({super.key});
@@ -21,9 +24,14 @@ class _TasksPageState extends State<TasksPage> {
     return Scaffold(
       body: Observer(builder: (_) {
         return TasksList(
+          onTaskTap: _onTaskTap,
           tasks: tasksState.tasks,
         );
       }),
     );
+  }
+
+  void _onTaskTap(Task task) {
+    context.router.push(TaskRoute(task: task));
   }
 }
