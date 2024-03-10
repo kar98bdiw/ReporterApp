@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:reporter_app/presentation/widgets/custom_list_tile.dart';
 
 import '../../core/models/task/task.dart';
 
@@ -14,10 +13,35 @@ class TaskTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomListTile(
+    return GestureDetector(
       onTap: () => onTap?.call(task),
-      title: task.title,
-      subtitle: task.description,
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          vertical: 5,
+          horizontal: 10,
+        ),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border.all(
+            width: 0.3,
+            color: Colors.black.withOpacity(0.2),
+          ),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Expanded(child: Text(task.title)),
+                Text(task.status.name),
+              ],
+            ),
+            const SizedBox(height: 10),
+            Text(task.description),
+          ],
+        ),
+      ),
     );
   }
 }
