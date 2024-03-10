@@ -29,6 +29,7 @@ class ScreenComponents {
           top: hasVPadding ? safeAreaTop : 0,
           left: hasHPadding ? 16 : 0,
           right: hasHPadding ? 16 : 0,
+          bottom: hasVPadding ? 16 : 0,
         ),
         child: parsedChild,
       ),

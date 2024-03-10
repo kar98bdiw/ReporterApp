@@ -1,25 +1,33 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:reporter_app/core/models/task/task.dart';
 import 'package:reporter_app/framework/helpers/screen_components.dart';
-import 'package:reporter_app/framework/routing/router.dart';
-import 'package:reporter_app/presentation/widgets/custom_button.dart';
-import 'package:reporter_app/presentation/widgets/task_tile.dart';
+import 'package:reporter_app/states/report/report_state.dart';
 
-import '../../core/models/task/task.dart';
+import '../widgets/custom_button.dart';
+import '../widgets/task_tile.dart';
 
 @RoutePage()
-class TaskPage extends StatefulWidget {
+class ReportPage extends StatefulWidget {
   final Task task;
-  const TaskPage({
+  const ReportPage({
     super.key,
     required this.task,
   });
 
   @override
-  State<TaskPage> createState() => _TaskPageState();
+  State<ReportPage> createState() => _ReportPageState();
 }
 
-class _TaskPageState extends State<TaskPage> {
+class _ReportPageState extends State<ReportPage> {
+  late ReportState state;
+
+  @override
+  void initState() {
+    state = ReportState(task: widget.task);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,6 +50,6 @@ class _TaskPageState extends State<TaskPage> {
   }
 
   void _onCreateReportTap() {
-    context.router.push(ReportRoute(task: widget.task));
+    state.createReport();
   }
 }

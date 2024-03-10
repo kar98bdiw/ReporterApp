@@ -21,6 +21,16 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const DashboardPage(),
       );
     },
+    ReportRoute.name: (routeData) {
+      final args = routeData.argsAs<ReportRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ReportPage(
+          key: args.key,
+          task: args.task,
+        ),
+      );
+    },
     TaskRoute.name: (routeData) {
       final args = routeData.argsAs<TaskRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -58,6 +68,43 @@ class DashboardRoute extends PageRouteInfo<void> {
   static const String name = 'DashboardRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ReportPage]
+class ReportRoute extends PageRouteInfo<ReportRouteArgs> {
+  ReportRoute({
+    Key? key,
+    required Task task,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ReportRoute.name,
+          args: ReportRouteArgs(
+            key: key,
+            task: task,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'ReportRoute';
+
+  static const PageInfo<ReportRouteArgs> page = PageInfo<ReportRouteArgs>(name);
+}
+
+class ReportRouteArgs {
+  const ReportRouteArgs({
+    this.key,
+    required this.task,
+  });
+
+  final Key? key;
+
+  final Task task;
+
+  @override
+  String toString() {
+    return 'ReportRouteArgs{key: $key, task: $task}';
+  }
 }
 
 /// generated route for

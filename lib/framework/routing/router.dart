@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/models/task/task.dart';
 import '../../presentation/pages/dashboard_page.dart';
+import '../../presentation/pages/report_page.dart';
 import '../../presentation/pages/task_page.dart';
 import '../../presentation/pages/tasks_page.dart';
 
@@ -23,7 +24,10 @@ class AppRouter extends _$AppRouter {
               ),
               AutoRoute(
                 page: TaskRoute.page,
-              )
+              ),
+              AutoRoute(
+                page: ReportRoute.page,
+              ),
             ]),
           ],
         ),
