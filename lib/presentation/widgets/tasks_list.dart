@@ -15,7 +15,7 @@ class TasksList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      padding: const EdgeInsets.all(15),
+      padding: EdgeInsets.zero,
       itemBuilder: (c, i) => TaskTile(
         task: tasks[i],
         onTap: onTaskTap,
