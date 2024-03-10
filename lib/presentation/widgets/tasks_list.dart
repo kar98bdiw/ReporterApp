@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:reporter_app/models/task/task.dart';
 import 'package:reporter_app/presentation/widgets/task_tile.dart';
+
+import '../../core/models/task/task.dart';
 
 class TasksList extends StatelessWidget {
   final List<Task> tasks;

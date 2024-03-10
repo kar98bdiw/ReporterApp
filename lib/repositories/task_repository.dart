@@ -1,7 +1,7 @@
 import 'package:reporter_app/http/client.dart';
-import 'package:reporter_app/models/response/response.dart';
 
-import '../models/task/task.dart';
+import '../core/models/response/response.dart';
+import '../core/models/task/task.dart';
 
 class TaskRepository {
   final HttpClient client;

@@ -1,4 +1,4 @@
-import '../models/report/report.dart';
+import '../core/models/report/report.dart';
 
 class ReportRepository {
   Future<List<Report>> getAllReports() async {

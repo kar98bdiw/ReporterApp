@@ -5,8 +5,8 @@ import 'package:reporter_app/engine/service_locator.dart';
 import 'package:reporter_app/presentation/widgets/tasks_list.dart';
 import 'package:reporter_app/states/tasks/tasks_state.dart';
 
+import '../../core/models/task/task.dart';
 import '../../framework/routing/router.dart';
-import '../../models/task/task.dart';
 
 @RoutePage()
 class TasksPage extends StatefulWidget {

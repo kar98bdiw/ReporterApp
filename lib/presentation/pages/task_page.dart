@@ -1,7 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:reporter_app/models/task/task.dart';
 import 'package:reporter_app/presentation/widgets/task_tile.dart';
+
+import '../../core/models/task/task.dart';
 
 @RoutePage()
 class TaskPage extends StatefulWidget {

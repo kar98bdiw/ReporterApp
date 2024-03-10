@@ -1,7 +1,7 @@
 import 'package:mobx/mobx.dart';
 
+import '../../core/models/task/task.dart';
 import '../../engine/service_locator.dart';
-import '../../models/task/task.dart';
 import '../../repositories/task_repository.dart';
 
 part 'tasks_state.g.dart';

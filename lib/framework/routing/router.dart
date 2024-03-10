@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../models/task/task.dart';
+import '../../core/models/task/task.dart';
 import '../../presentation/pages/dashboard_page.dart';
 import '../../presentation/pages/task_page.dart';
 import '../../presentation/pages/tasks_page.dart';
