@@ -1,6 +1,6 @@
 class Environment {
-  var baseUrl = 'http://localhost:4041';
+  static const baseUrl = 'http://localhost:4041';
 
-  var report = '/report';
-  var task = '/task';
+  static const report = '/report';
+  static const tasks = 'tasks';
 }

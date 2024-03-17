@@ -24,12 +24,12 @@ mixin _$TasksState on TasksStateBase, Store {
     });
   }
 
-  late final _$loadTasksAsyncAction =
-      AsyncAction('TasksStateBase.loadTasks', context: context);
+  late final _$initAsyncAction =
+      AsyncAction('TasksStateBase.init', context: context);
 
   @override
-  Future<void> loadTasks() {
-    return _$loadTasksAsyncAction.run(() => super.loadTasks());
+  Future<void> init() {
+    return _$initAsyncAction.run(() => super.init());
   }
 
   @override

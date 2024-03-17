@@ -1,8 +1,10 @@
+import 'dart:async';
+
 import 'package:mobx/mobx.dart';
+import 'package:reporter_app/engine/service_locator.dart';
+import 'package:reporter_app/repositories/task_repository.dart';
 
 import '../../core/models/task/task.dart';
-import '../../engine/service_locator.dart';
-import '../../repositories/task_repository.dart';
 
 part 'tasks_state.g.dart';
 
@@ -13,10 +15,23 @@ abstract class TasksStateBase with Store {
   ObservableList<Task> tasks = <Task>[].asObservable();
 
   @action
-  Future<void> loadTasks() async {
-    // try {
-    var res = await ServiceLocator().get<TaskRepository>().getTasks();
-    tasks = (res.data as List<Task>).asObservable();
-    // } catch (e) {}
+  Future<void> init() async {
+    initTaskListener();
+  }
+
+  void initTaskListener() {
+    ServiceLocator().get<TaskRepository>().taskNotifier.listen((value) {
+      manageTask(value);
+    });
+  }
+
+  void manageTask(Task task) {
+    var index = tasks.indexWhere((element) => task.id == element.id);
+    if (index == -1) {
+      tasks.add(task);
+    } else {
+      tasks[index] = task;
+    }
+    tasks = tasks.toList().asObservable();
   }
 }

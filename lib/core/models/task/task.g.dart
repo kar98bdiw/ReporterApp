@@ -13,6 +13,7 @@ _$TaskImpl _$$TaskImplFromJson(Map<String, dynamic> json) => _$TaskImpl(
           : const TaskStatusConverter().fromJson(json['status'] as int),
       title: json['title'] as String,
       description: json['description'] as String,
+      date: json['date'] as int,
     );
 
 Map<String, dynamic> _$$TaskImplToJson(_$TaskImpl instance) =>
@@ -21,4 +22,5 @@ Map<String, dynamic> _$$TaskImplToJson(_$TaskImpl instance) =>
       'status': const TaskStatusConverter().toJson(instance.status),
       'title': instance.title,
       'description': instance.description,
+      'date': instance.date,
     };

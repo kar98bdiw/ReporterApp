@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "166179504641",
+    "project_id": "reporter-d4907",
+    "storage_bucket": "reporter-d4907.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166179504641:android:5cc33e0205491895343600",
+        "android_client_info": {
+          "package_name": "com.example.reporter_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJ7GC6xFhzvOKshzFLNSX-9_0MnwhVt4o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

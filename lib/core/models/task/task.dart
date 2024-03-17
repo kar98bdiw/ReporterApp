@@ -13,6 +13,7 @@ class Task with _$Task {
     @TaskStatusConverter() @Default(TaskStatus.opened) TaskStatus status,
     required String title,
     required String description,
+    required int date,
   }) = _Task;
 
   factory Task.fromJson(Map<String, Object?> json) => _$TaskFromJson(json);
